@@ -18,8 +18,6 @@ Data.Ann <- Data.Ann[grep("T", Data.Ann[,"Type"]),] # T is the annotation for St
 Stroma <-  rep_len(2, length(Data.Ann[,"Stroma"]))
 Stroma[grep("^mature", Data.Ann[,"Stroma"])] <- 1
 
-
-
 ### remove samples with a variance close to zero
 
 nzv <- nearZeroVar(Data.rf)
@@ -36,5 +34,5 @@ Data.rf <- predict(preProcValues, Data.rf)
 
 Data.rf <- cbind(Data.rf, Stroma)
 
-RandomForest(Data=Data.rf, Comparaison="Stroma", Split=FALSE, Nb=3, Repeats=10, PathSave="Path/to/save", SetSeed=147896325)
+RandomForest(Data=Data.rf, Comparaison="Stroma", Nb=3, Repeats=10, PathSave="Path/to/save", SetSeed=147896325)
 

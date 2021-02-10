@@ -19,7 +19,7 @@ entrez2name <- function(entrez)
   return(gname)
 }
 
-RandomForest <- function(Data, Data.DEG=NA, Comparaison, Nb=3, Repeats=10, PathSave, SetSeed=147896325){
+RandomForest <- function(Data, Comparaison, Nb=3, Repeats=10, PathSave, SetSeed=147896325){
 require(ggplot2)
 require(ROCR)
 require(caret)
